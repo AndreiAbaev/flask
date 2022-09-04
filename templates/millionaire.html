@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <li class="nav-item">
+        <a class="nav-link" href="/small">Малые города</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/medium">Средние города</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/big">Большие города</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/bigger">Крупные города</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/biggest">Крупнейшие города</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="true" href="/millionaire">Города-миллионеры</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    {% for row in reader %}
+    <tr>
+        <td>{{ row['City'] }}</td>
+        <td>{{ row['Region'] }}</td>
+        <td>{{ row['Population'] }}</td>
+    </tr>
+    {% endfor %}
+{% endblock %}
